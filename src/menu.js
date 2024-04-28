@@ -1,7 +1,7 @@
 export function loadMenuPage() {
     const createMenuItemCard = (number, dish, description, price) => {
         const card = document.createElement('div');
-        card.classList.add('card', 'w-84', 'bg-neutral');
+        card.classList.add('card', 'w-84', 'bg-base-100/90');
 
         const cardBody = document.createElement('div');
         cardBody.classList.add('card-body');
@@ -19,7 +19,7 @@ export function loadMenuPage() {
 
         const addToCartButton = document.createElement('button');
         addToCartButton.classList.add('btn', 'btn-outline');
-        addToCartButton.textContent = 'Add to Cart';
+        addToCartButton.textContent = 'Order';
 
         const cardActions = document.createElement('div');
         cardActions.classList.add('card-actions', 'justify-between');
@@ -27,8 +27,9 @@ export function loadMenuPage() {
         cardActions.appendChild(addToCartButton);
 
         const imgContainer = document.createElement('figure');
+        imgContainer.classList.add('outline', 'outline-2', 'hover:outline-dashed');
         const img = document.createElement('img');
-        img.src = `/src/menu/${dish.toLowerCase()}.webp`;
+        img.src = `/src/images/${dish.toLowerCase()}.webp`;
         img.alt = dish;
         img.classList.add('w-full', 'h-48', 'object-cover', 'sepia-[.20]');
         img.setAttribute('loading', 'lazy');
@@ -59,7 +60,7 @@ export function loadMenuPage() {
         ];
 
         const cardContainer = document.createElement('div');
-        cardContainer.classList.add('grid', 'grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-4', 'gap-4', 'p-4');
+        cardContainer.classList.add('grid', 'grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-4', 'gap-4', 'p-8', 'bg-orange-200');
 
         menuItems.forEach(menuItem => {
             const card = createMenuItemCard(menuItem.number, menuItem.dish, menuItem.description, menuItem.price);
@@ -73,11 +74,10 @@ export function loadMenuPage() {
     overlayDiv.classList.add('hero-overlay', 'bg-opacity-40');
 
     const container = document.createElement('div');
-    container.classList.add('hero', 'min-h-screen', 'backdrop-blur');
+    container.classList.add('hero', 'min-h-screen');
     container.appendChild(overlayDiv);
 
     const content = document.querySelector('#content');
-    container.style.backgroundImage = 'url(/src/menu.jpg)';
     content.appendChild(container);
 
     appendMenuItemsToContainer(container);

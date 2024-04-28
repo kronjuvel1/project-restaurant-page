@@ -1,5 +1,6 @@
 import { loadHomePage } from './homepage.js';
 import { loadMenuPage } from './menu.js';
+import { loadAboutPage } from './about.js';
 import './style.css';
 
 loadHomePage();
@@ -11,16 +12,21 @@ homeLink.addEventListener('click', function() {
 });
 
 const menuLink = document.querySelector('#menu-btn');
-const menuLink2 = document.querySelector('#menu-btn2');
+menuLink.addEventListener('click', function() {
+    clearContent();
+    loadMenuPage();
+});
 
+const menuLink2 = document.querySelector('#menu-btn2');
 menuLink2.addEventListener('click', function() {
     clearContent();
     loadMenuPage();
 });
 
-menuLink.addEventListener('click', function() {
+const aboutLink = document.querySelector('#about-btn');
+aboutLink.addEventListener('click', function() {
     clearContent();
-    loadMenuPage();
+    loadAboutPage();
 });
 
 function clearContent() {

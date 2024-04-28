@@ -1,7 +1,7 @@
 export function loadHomePage() {
     const heroDiv = document.createElement('div');
     heroDiv.classList.add('hero', 'min-h-screen');
-    heroDiv.style.backgroundImage = 'url(/src/restaurant.jpg)';
+    heroDiv.style.backgroundImage = 'url(/src/images/restaurant.jpg)';
 
     const overlayDiv = document.createElement('div');
     overlayDiv.classList.add('hero-overlay', 'bg-opacity-40');
