@@ -22,6 +22,7 @@ export function loadHomePage() {
 
     const button = document.createElement('button');
     button.classList.add('btn', 'btn-primary-content');
+    button.setAttribute('id', 'menu-btn2');
     button.textContent = 'Explore Our Menu';
 
     innerDiv.appendChild(heading);
@@ -33,5 +34,6 @@ export function loadHomePage() {
     heroDiv.appendChild(overlayDiv);
     heroDiv.appendChild(contentDiv);
 
-    document.body.appendChild(heroDiv);
+    const content = document.querySelector('#content');
+    content.appendChild(heroDiv);
 }
