@@ -29,7 +29,7 @@ export function loadMenuPage() {
         const imgContainer = document.createElement('figure');
         imgContainer.classList.add('outline', 'outline-2', 'hover:outline-dashed');
         const img = document.createElement('img');
-        img.src = `./images/${dish.toLowerCase()}.webp`;
+        img.src = `../images/${dish.toLowerCase()}.webp`;
         img.alt = dish;
         img.classList.add('w-full', 'h-48', 'object-cover', 'sepia-[.20]');
         img.setAttribute('loading', 'lazy');
