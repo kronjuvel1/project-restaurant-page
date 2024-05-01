@@ -8,6 +8,7 @@ export function loadAboutPage() {
     const attributionDiv = document.createElement('div');
     attributionDiv.classList.add('text-sm', 'absolute', 'bottom-0', 'w-full', 'flex', 'justify-end', 'p-5', 'text-white', 'text-opacity-50');
     attributionDiv.innerHTML = `Photo by Victoria Shes on&nbsp;`;
+    
     const link = document.createElement('a');
     link.classList.add('underline');
     link.textContent = 'Unsplash';

@@ -30,13 +30,14 @@ export function loadHomePage() {
     const attributionDiv = document.createElement('div');
     attributionDiv.classList.add('text-sm', 'absolute', 'bottom-0', 'w-full', 'flex', 'justify-end', 'p-5', 'text-white', 'text-opacity-50');
     attributionDiv.innerHTML = `Photo by K8 on&nbsp;`; 
+    
     const link = document.createElement('a');
     link.classList.add('underline');
     link.textContent = 'Unsplash';
     link.href = 'https://unsplash.com/@_k8_';
     link.target = '_blank';
     attributionDiv.appendChild(link);    
-    
+
     innerDiv.appendChild(heading);
     innerDiv.appendChild(paragraph);
     innerDiv.appendChild(button);

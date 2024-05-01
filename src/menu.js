@@ -1,8 +1,10 @@
 export function loadMenuPage() {
+    
     const images = require.context('./images', false, /\.webp$/);
     function getImage(dish) {
         return images(`./${dish.toLowerCase()}.webp`);
     }
+
     function getBgImage(image) {
         return `url(${images(`./${image}.webp`)})`;
     }
