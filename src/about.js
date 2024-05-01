@@ -4,6 +4,7 @@ export function loadAboutPage() {
     const heroDiv = document.createElement('div');
     heroDiv.classList.add('hero', 'min-h-screen');
     heroDiv.style.backgroundImage = `url(${menuImage})`;
+    
     const attributionDiv = document.createElement('div');
     attributionDiv.classList.add('text-sm', 'absolute', 'bottom-0', 'w-full', 'flex', 'justify-end', 'p-5', 'text-white', 'text-opacity-50');
     attributionDiv.innerHTML = `Photo by Victoria Shes on&nbsp;`;
