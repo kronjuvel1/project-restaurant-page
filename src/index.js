@@ -5,6 +5,13 @@ import './style.css';
 
 loadHomePage();
 
+function clearContent() {
+    const content = document.querySelector('#content');
+    if (content) {
+        content.innerHTML = '';
+    }
+}
+
 const homeLink = document.querySelector('#home-btn');
 homeLink.addEventListener('click', function() {
     clearContent();
@@ -28,10 +35,3 @@ aboutLink.addEventListener('click', function() {
     clearContent();
     loadAboutPage();
 });
-
-function clearContent() {
-    const content = document.querySelector('#content');
-    if (content) {
-        content.innerHTML = '';
-    }
-}

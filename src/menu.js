@@ -1,7 +1,15 @@
+const images = require.context('./images', false, /\.webp$/);
+function getImage(dish) {
+    return images(`./${dish.toLowerCase()}.webp`);
+}
+function getBgImage(image) {
+    return `url(${images(`./${image}.webp`)})`;
+}
+
 export function loadMenuPage() {
     const createMenuItemCard = (number, dish, description, price) => {
         const card = document.createElement('div');
-        card.classList.add('card', 'w-84', 'bg-base-100/90');
+        card.classList.add('card', 'w-84', 'bg-base-100/95');
 
         const cardBody = document.createElement('div');
         cardBody.classList.add('card-body');
@@ -29,7 +37,7 @@ export function loadMenuPage() {
         const imgContainer = document.createElement('figure');
         imgContainer.classList.add('outline', 'outline-2', 'hover:outline-dashed');
         const img = document.createElement('img');
-        img.src = `/images/${dish.toLowerCase()}.webp`;
+        img.src = getImage(dish);
         img.alt = dish;
         img.classList.add('w-full', 'h-48', 'object-cover', 'sepia-[.20]');
         img.setAttribute('loading', 'lazy');
@@ -60,7 +68,9 @@ export function loadMenuPage() {
         ];
 
         const cardContainer = document.createElement('div');
-        cardContainer.classList.add('grid', 'grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-4', 'gap-4', 'p-8', 'bg-orange-200');
+        cardContainer.classList.add('grid', 'grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-4', 'gap-4', 'p-8');
+        cardContainer.style.backgroundImage = getBgImage('menu-bg');
+        cardContainer.style.backgroundSize = 
 
         menuItems.forEach(menuItem => {
             const card = createMenuItemCard(menuItem.number, menuItem.dish, menuItem.description, menuItem.price);
@@ -81,4 +91,4 @@ export function loadMenuPage() {
     content.appendChild(container);
 
     appendMenuItemsToContainer(container);
-}  
+}
