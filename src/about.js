@@ -4,17 +4,6 @@ export function loadAboutPage() {
     const heroDiv = document.createElement('div');
     heroDiv.classList.add('hero', 'min-h-screen');
     heroDiv.style.backgroundImage = `url(${menuImage})`;
-    
-    const attributionDiv = document.createElement('div');
-    attributionDiv.classList.add('text-sm', 'absolute', 'bottom-0', 'w-full', 'flex', 'justify-end', 'p-5', 'text-white', 'text-opacity-50');
-    attributionDiv.innerHTML = `Photo by Victoria Shes on&nbsp;`;
-    
-    const link = document.createElement('a');
-    link.classList.add('underline');
-    link.textContent = 'Unsplash';
-    link.href = 'https://unsplash.com/@victoriakosmo';
-    link.target = '_blank';
-    attributionDiv.appendChild(link);
 
     const overlayDiv = document.createElement('div');
     overlayDiv.classList.add('hero-overlay', 'bg-opacity-40');
@@ -98,5 +87,4 @@ export function loadAboutPage() {
 
     const content = document.querySelector('#content');
     content.appendChild(heroDiv);
-    content.appendChild(attributionDiv);
 }
