@@ -27,15 +27,26 @@ export function loadHomePage() {
     button.setAttribute('id', 'menu-btn2');
     button.textContent = 'Explore Our Menu';
 
+    const attributionDiv = document.createElement('div');
+    attributionDiv.classList.add('text-sm', 'absolute', 'bottom-0', 'w-full', 'flex', 'justify-end', 'p-5', 'text-white', 'text-opacity-50');
+    attributionDiv.innerHTML = `Photo by K8 on&nbsp;`; 
+    const link = document.createElement('a');
+    link.classList.add('underline');
+    link.textContent = 'Unsplash';
+    link.href = 'https://unsplash.com/@_k8_';
+    link.target = '_blank';
+    attributionDiv.appendChild(link);    
+    
     innerDiv.appendChild(heading);
     innerDiv.appendChild(paragraph);
     innerDiv.appendChild(button);
-
+    
     contentDiv.appendChild(innerDiv);
-
+    
     heroDiv.appendChild(overlayDiv);
     heroDiv.appendChild(contentDiv);
-
+    
     const content = document.querySelector('#content');
     content.appendChild(heroDiv);
+    content.appendChild(attributionDiv);
 }
